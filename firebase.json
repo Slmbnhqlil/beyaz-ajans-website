@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "minipan-restaurant",
     "public": ".",
     "ignore": [
       "firebase.json",
