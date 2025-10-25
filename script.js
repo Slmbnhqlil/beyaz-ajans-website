@@ -278,18 +278,24 @@ document.addEventListener('DOMContentLoaded', function() {
         counterObserver.observe(branchInfo);
     }
 
-    // İletişim Formu Animasyonu
+    // İletişim Formu Otomatik Email Gönderimi
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // KVKK rızası kontrolü
             const kvkkConsent = document.getElementById('kvkk-consent');
             if (kvkkConsent && !kvkkConsent.checked) {
-                alert('Lütfen KVKK Aydınlatma Metni\'ni okuyarak kişisel verilerinizin işlenmesine rıza gösteriniz.');
+                alert('Lütfen KVKK Aydınlatma Metni\'ni okuyarak kişisel verilerinizin işlenmesine rıza gösteriyorum.');
                 return;
             }
+            
+            // Form verilerini al
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
             
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
@@ -299,23 +305,128 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
             submitBtn.disabled = true;
             
-            // Simüle edilmiş form gönderimi
-            setTimeout(() => {
-                submitBtn.textContent = 'Gönderildi! ✓';
+            // Ek form verilerini ekle
+            formData.append('subject', `Minipan İletişim Formu - ${name}`);
+            formData.append('timestamp', new Date().toLocaleString('tr-TR'));
+            formData.append('kvkk-consent', 'Kabul edildi');
+            
+            try {
+                // Netlify Forms'a gönder
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 
+                        "Content-Type": "application/x-www-form-urlencoded" 
+                    },
+                    body: new URLSearchParams(formData).toString()
+                });
                 
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = 'var(--gradient-pink)';
-                    submitBtn.disabled = false;
-                    contactForm.reset();
+                if (response.ok) {
+                    // Başarı durumu
+                    submitBtn.textContent = 'Gönderildi! ✓';
+                    submitBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
                     
-                    // KVKK checkbox'ını da sıfırla
-                    if (kvkkConsent) {
-                        kvkkConsent.checked = false;
-                    }
-                }, 2000);
-            }, 1500);
+                    // Email bildirimi gönder
+                    await sendEmailNotification(name, email, message);
+                    
+                    setTimeout(() => {
+                        contactForm.reset();
+                        if (kvkkConsent) {
+                            kvkkConsent.checked = false;
+                        }
+                        
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = 'var(--gradient-pink)';
+                        submitBtn.disabled = false;
+                        
+                        alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                    }, 2000);
+                } else {
+                    throw new Error('Form gönderimi başarısız');
+                }
+                
+            } catch (error) {
+                console.error('Form gönderim hatası:', error);
+                
+                // Fallback - direkt email gönderimi
+                await sendDirectEmail(name, email, message, submitBtn, originalText, contactForm, kvkkConsent);
+            }
         });
+    }
+    
+    // Email bildirimi gönder
+    async function sendEmailNotification(name, email, message) {
+        try {
+            const emailData = {
+                to: 'h.agdas04@gmail.com',
+                subject: `Minipan İletişim Formu - ${name}`,
+                body: `
+📧 Yeni İletişim Formu Mesajı
+
+👤 Ad Soyad: ${name}
+📧 E-posta: ${email}
+💬 Mesaj:
+${message}
+
+---
+⏰ Tarih: ${new Date().toLocaleString('tr-TR')}
+🌐 Kaynak: Minipan Web Sitesi
+✅ KVKK: Rıza alındı
+                `
+            };
+            
+            // Basit webhook veya email servisi kullan
+            await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    service_id: 'default_service',
+                    template_id: 'template_minipan',
+                    user_id: 'public_key',
+                    template_params: emailData
+                })
+            });
+        } catch (error) {
+            console.log('Email bildirimi gönderilemedi:', error);
+        }
+    }
+    
+    // Direkt email gönderimi (fallback)
+    async function sendDirectEmail(name, email, message, submitBtn, originalText, form, kvkkConsent) {
+        const mailtoUrl = `mailto:h.agdas04@gmail.com?subject=${encodeURIComponent(`Minipan İletişim Formu - ${name}`)}&body=${encodeURIComponent(`
+🥞 Minipan İletişim Formu
+
+👤 Ad Soyad: ${name}
+📧 E-posta: ${email}
+💬 Mesaj:
+${message}
+
+---
+⏰ Gönderim Tarihi: ${new Date().toLocaleString('tr-TR')}
+🌐 Kaynak: Minipan Web Sitesi
+✅ KVKK: Kişisel veri işleme rızası alınmıştır
+        `)}`;
+        
+        submitBtn.textContent = 'Email Açılıyor...';
+        submitBtn.style.background = 'linear-gradient(135deg, #17a2b8 0%, #20c997 100%)';
+        
+        setTimeout(() => {
+            window.location.href = mailtoUrl;
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = 'var(--gradient-pink)';
+                submitBtn.disabled = false;
+                
+                form.reset();
+                if (kvkkConsent) {
+                    kvkkConsent.checked = false;
+                }
+                
+                alert('Email uygulamanız açıldı. Mesajınızı göndermek için "Gönder" butonuna tıklayın.');
+            }, 2000);
+        }, 1000);
     }
 
     // Form Input Animasyonları
@@ -496,5 +607,120 @@ document.addEventListener('DOMContentLoaded', function() {
         // Burada scroll optimizasyonları yapılabilir
     }, 16)); // 60fps için
 
-    console.log('� Minipan Website tamamen yüklendi! Lezzetli deneyiminiz başlasın!');
+    console.log('🥞 Minipan Website tamamen yüklendi! Lezzetli deneyiminiz başlasın!');
+});
+
+// ============ MENÜ SAYFASI FONKSİYONLARI ============
+
+// Menü kategorisi filtreleme sistemi
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuSections = document.querySelectorAll('.menu-section');
+
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Aktif butonu güncelle
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-category');
+
+                // Menü bölümlerini filtrele
+                menuSections.forEach(section => {
+                    const sectionCategory = section.getAttribute('data-category');
+                    
+                    if (category === 'all' || sectionCategory === category) {
+                        section.style.display = 'block';
+                        section.classList.remove('hidden');
+                        
+                        // Animasyon ekle
+                        setTimeout(() => {
+                            section.style.opacity = '1';
+                            section.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        section.style.opacity = '0';
+                        section.style.transform = 'translateY(20px)';
+                        
+                        setTimeout(() => {
+                            section.style.display = 'none';
+                            section.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+
+    // Menü kartlarına hover efekti
+    const menuCards = document.querySelectorAll('.menu-item-card');
+    menuCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Teklif kartları animasyonu
+    const offerCards = document.querySelectorAll('.offer-card');
+    offerCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.offer-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+                icon.style.transition = 'all 0.3s ease';
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.offer-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
+    // Scroll'da menü kartlarını animasyonla göster
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                entry.target.style.transition = 'all 0.6s ease';
+            }
+        });
+    }, observerOptions);
+
+    // Tüm menü kartlarını gözlemle
+    document.querySelectorAll('.menu-item-card, .offer-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        cardObserver.observe(card);
+    });
+
+    // Fiyat vurgulama efekti
+    const prices = document.querySelectorAll('.price');
+    prices.forEach(price => {
+        price.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+            this.style.background = 'var(--gradient-pink)';
+            this.style.color = 'var(--white)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        price.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.background = 'var(--secondary-pink)';
+            this.style.color = 'var(--primary-pink)';
+        });
+    });
 });

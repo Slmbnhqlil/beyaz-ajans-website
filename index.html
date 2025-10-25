@@ -57,7 +57,7 @@
             <h1 class="hero-title animate-on-scroll">Minipan</h1>
             <p class="hero-subtitle animate-on-scroll">Her ısırıkta mutluluk tadın</p>
             <p class="hero-description animate-on-scroll">Taze malzemeler, özel tarifler ve sevgiyle hazırlanan pankeklerimiz ile benzersiz bir lezzet deneyimi yaşayın.</p>
-            <button class="cta-button animate-on-scroll">Menüyü Keşfet</button>
+            <a href="menu.html" class="cta-button animate-on-scroll">Menüyü Keşfet</a>
         </div>
         <div class="hero-image animate-on-scroll">
             <div class="pankek-icon">🥞</div>
@@ -145,6 +145,10 @@
                     <p>Ekşi vişne ve mascarpone krema</p>
                     <span class="price">29₺</span>
                 </div>
+            </div>
+            <div class="menu-cta animate-on-scroll">
+                <a href="menu.html" class="menu-full-btn">Tüm Menüyü Gör</a>
+                <p>Daha fazla lezzet seçeneği için detaylı menümüzü inceleyin</p>
             </div>
         </div>
     </section>
@@ -299,44 +303,46 @@
             <div class="contact-content">
                 <div class="contact-info animate-on-scroll">
                     <h3>İletişim Bilgileri</h3>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <strong>Adres</strong>
-                            <p>Tabaklar, Börekciler Sk. No: 20B D:19<br>14100 Bolu Merkez/Bolu</p>
+                    <div class="contact-items-grid">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Adres</strong>
+                                <p>Tabaklar, Börekciler Sk. No: 20B D:19<br>14100 Bolu Merkez/Bolu</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <strong>Telefon</strong>
-                            <p>0850 840 1756</p>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong>Telefon</strong>
+                                <p>0850 840 1756</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <strong>E-posta</strong>
-                            <p>info@minipan.com</p>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>E-posta</strong>
+                                <p>info@minipan.com</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🕒</span>
-                        <div>
-                            <strong>Çalışma Saatleri</strong>
-                            <p>Pazartesi - Pazar: 08:00 - 22:00</p>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <div>
+                                <strong>Çalışma Saatleri</strong>
+                                <p>Pazartesi - Pazar: 08:00 - 22:00</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form animate-on-scroll">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Adınız" required>
+                        <input type="text" id="name" name="name" placeholder="Adınız" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="E-posta" required>
+                        <input type="email" id="email" name="email" placeholder="E-posta" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" placeholder="Mesajınız" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Mesajınız" rows="5" required></textarea>
                     </div>
                     <div class="form-group kvkk-consent">
                         <label class="checkbox-container">
@@ -357,21 +363,59 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Minipan</div>
-                <p>&copy; 2025 Minipan. Tüm hakları saklıdır.</p>
-                <div class="footer-links">
-                    <a href="kvkk.html" class="footer-link">KVKK Aydınlatma Metni</a>
-                    <a href="#contact" class="footer-link">İletişim</a>
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">Minipan</span>
+                        <span class="logo-emoji">🥞</span>
+                    </div>
+                    <p class="footer-description">Türkiye'nin en lezzetli pankeklerini keşfedin. Her ısırıkta mutluluk tadın.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="Twitter">🐦</a>
+                        <a href="#" class="social-link" title="YouTube">📺</a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-link">📘</a>
-                    <a href="#" class="social-link">📷</a>
-                    <a href="#" class="social-link">🐦</a>
+                
+                <div class="footer-section">
+                    <h4>Hızlı Linkler</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#about">Hakkımızda</a></li>
+                        <li><a href="menu.html">Menü</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#branches">Şubelerimiz</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Franchise</h4>
+                    <p class="franchise-info">Minipan ailesine katılmak için bizimle iletişime geçin.</p>
+                    <div class="franchise-contact">
+                        <p><strong>Franchise Hattı:</strong><br>0850 840 1756</p>
+                        <p><strong>E-posta:</strong><br>franchise@minipan.com</p>
+                    </div>
+                    <a href="#contact" class="franchise-btn">Bilgi Al</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Minipan. Tüm hakları saklıdır.</p>
+                    <div class="footer-legal">
+                        <a href="kvkk.html" class="legal-link">KVKK Aydınlatma Metni</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="legal-link">Gizlilik Politikası</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="legal-link">Kullanım Koşulları</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="contact-form.js"></script>
 </body>
 </html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Minipan'ın zengin menüsünü keşfedin. Tatlı ve tuzlu pankekler, içecekler ve özel tatlarımız.">
+    <meta name="keywords" content="pankek, minipan, menü, tatlı, kahvaltı, Bolu, lezzetli">
+    <meta name="author" content="Minipan">
+    
+    <!-- Mobile optimizations -->
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Minipan">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Menü - Minipan | Türkiye'nin En Lezzetli Pankekleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Minipan</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="index.html#about" class="nav-link">Hakkımızda</a></li>
+                <li><a href="menu.html" class="nav-link active">Menü</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Galeri</a></li>
+                <li><a href="index.html#branches" class="nav-link">Şubelerimiz</a></li>
+                <li><a href="index.html#contact" class="nav-link">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="menu-page">
+        <!-- Hero Section -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1 class="animate-on-scroll">Minipan Menüsü</h1>
+                <p class="animate-on-scroll">Lezzetin her hali, her damağa uygun tatlar</p>
+                <div class="pankek-icon animate-on-scroll">🥞</div>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <section class="menu-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Tümü</button>
+                    <button class="filter-btn" data-category="sweet">Tatlı Pankekler</button>
+                    <button class="filter-btn" data-category="savory">Tuzlu Pankekler</button>
+                    <button class="filter-btn" data-category="drinks">İçecekler</button>
+                    <button class="filter-btn" data-category="extras">Ekstralar</button>
+                </div>
+
+                <!-- Tatlı Pankekler -->
+                <div class="menu-section" data-category="sweet">
+                    <h2 class="section-title">🍓 Tatlı Pankekler</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍓</div>
+                            <div class="item-details">
+                                <h3>Çilekli Pankek</h3>
+                                <p>Taze çilekler, krema ve pudra şekeri ile</p>
+                                <div class="card-footer">
+                                    <span class="price">45 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍫</div>
+                            <div class="item-details">
+                                <h3>Çikolatalı Pankek</h3>
+                                <p>Sıcak çikolata sosu, krema ve çikolata parçacıkları</p>
+                                <div class="card-footer">
+                                    <span class="price">50 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍌</div>
+                            <div class="item-details">
+                                <h3>Muzlu Karamelli Pankek</h3>
+                                <p>Dilimlenmiş muz, karamel sosu ve badem parçacıkları</p>
+                                <div class="card-footer">
+                                    <span class="price">48 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥜</div>
+                            <div class="item-details">
+                                <h3>Fıstık Ezmeli Pankek</h3>
+                                <p>Fıstık ezmesi, bal ve crushed fıstık</p>
+                                <div class="card-footer">
+                                    <span class="price">52 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍊</div>
+                            <div class="item-details">
+                                <h3>Portakallı Pankek</h3>
+                                <p>Taze portakal suyu, portakal dilimleri ve nane</p>
+                                <div class="card-footer">
+                                    <span class="price">46 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍒</div>
+                            <div class="item-details">
+                                <h3>Kirazlı Pankek</h3>
+                                <p>Taze kirazlar, kiraz sosu ve krema</p>
+                                <div class="card-footer">
+                                    <span class="price">47 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥥</div>
+                            <div class="item-details">
+                                <h3>Hindistan Cevizli Pankek</h3>
+                                <p>Hindistan cevizi rendesi, hindistan cevizi sosu</p>
+                                <div class="card-footer">
+                                    <span class="price">49 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍯</div>
+                            <div class="item-details">
+                                <h3>Ballı Pankek</h3>
+                                <p>Doğal çiçek balı, tereyağı ve ceviz</p>
+                                <div class="card-footer">
+                                    <span class="price">44 ₺</span>
+                                    <button class="add-to-cart-btn">🛒 Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuzlu Pankekler -->
+                <div class="menu-section" data-category="savory">
+                    <h2 class="section-title">🧀 Tuzlu Pankekler</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🧀</div>
+                            <div class="item-details">
+                                <h3>Peynirli Pankek</h3>
+                                <p>Kaşar peyniri, beyaz peynir ve maydanoz</p>
+                                <span class="price">42 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥓</div>
+                            <div class="item-details">
+                                <h3>Sucuklu Pankek</h3>
+                                <p>Sucuk, kaşar peyniri ve domates</p>
+                                <span class="price">48 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍄</div>
+                            <div class="item-details">
+                                <h3>Mantarlı Pankek</h3>
+                                <p>Mantar sote, kaşar peyniri ve taze otlar</p>
+                                <span class="price">45 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍅</div>
+                            <div class="item-details">
+                                <h3>Sebzeli Pankek</h3>
+                                <p>Karışık sebze, kaşar peyniri ve pesto sos</p>
+                                <span class="price">44 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥚</div>
+                            <div class="item-details">
+                                <h3>Yumurtalı Pankek</h3>
+                                <p>Scrambled yumurta, kaşar peyniri ve taze soğan</p>
+                                <span class="price">46 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🌿</div>
+                            <div class="item-details">
+                                <h3>Ispanaklı Pankek</h3>
+                                <p>Ispanak, ricotta peyniri ve sarımsak</p>
+                                <span class="price">43 ₺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İçecekler -->
+                <div class="menu-section" data-category="drinks">
+                    <h2 class="section-title">☕ İçecekler</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">☕</div>
+                            <div class="item-details">
+                                <h3>Türk Kahvesi</h3>
+                                <p>Geleneksel Türk kahvesi, lokum ile</p>
+                                <span class="price">25 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">☕</div>
+                            <div class="item-details">
+                                <h3>Filtre Kahve</h3>
+                                <p>Özel blend kahve çekirdekleri</p>
+                                <span class="price">30 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥛</div>
+                            <div class="item-details">
+                                <h3>Cappuccino</h3>
+                                <p>Espresso, süt köpüğü ve tarçın</p>
+                                <span class="price">35 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍫</div>
+                            <div class="item-details">
+                                <h3>Sıcak Çikolata</h3>
+                                <p>Gerçek çikolata, süt ve marshmallow</p>
+                                <span class="price">32 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🧃</div>
+                            <div class="item-details">
+                                <h3>Taze Portakal Suyu</h3>
+                                <p>Günlük sıkılmış portakal suyu</p>
+                                <span class="price">28 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥤</div>
+                            <div class="item-details">
+                                <h3>Smoothie</h3>
+                                <p>Mevsim meyvelerinden hazırlanan smoothie</p>
+                                <span class="price">38 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍵</div>
+                            <div class="item-details">
+                                <h3>Çay Çeşitleri</h3>
+                                <p>Türk çayı, yeşil çay, bitki çayları</p>
+                                <span class="price">15 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🧊</div>
+                            <div class="item-details">
+                                <h3>Soğuk İçecekler</h3>
+                                <p>Kola, fanta, sprite, ayran, şalgam</p>
+                                <span class="price">20 ₺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ekstralar -->
+                <div class="menu-section" data-category="extras">
+                    <h2 class="section-title">✨ Ekstralar</h2>
+                    <div class="menu-items-grid">
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍓</div>
+                            <div class="item-details">
+                                <h3>Ekstra Meyve</h3>
+                                <p>Çilek, muz, kiraz, portakal</p>
+                                <span class="price">8 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍫</div>
+                            <div class="item-details">
+                                <h3>Ekstra Çikolata</h3>
+                                <p>Sıcak çikolata sosu, çikolata parçacıkları</p>
+                                <span class="price">10 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥛</div>
+                            <div class="item-details">
+                                <h3>Ekstra Krema</h3>
+                                <p>Çırpılmış krema</p>
+                                <span class="price">6 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🧀</div>
+                            <div class="item-details">
+                                <h3>Ekstra Peynir</h3>
+                                <p>Kaşar, beyaz peynir, ricotta</p>
+                                <span class="price">7 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🍯</div>
+                            <div class="item-details">
+                                <h3>Ekstra Soslar</h3>
+                                <p>Bal, karamel, çilek, çikolata sosu</p>
+                                <span class="price">5 ₺</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card animate-on-scroll">
+                            <div class="item-image">🥜</div>
+                            <div class="item-details">
+                                <h3>Ekstra Fındık/Badem</h3>
+                                <p>Kırılmış fındık, badem, ceviz</p>
+                                <span class="price">9 ₺</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="special-offers">
+            <div class="container">
+                <h2 class="section-title">🎯 Özel Teklifler</h2>
+                <div class="offers-grid">
+                    <div class="offer-card animate-on-scroll">
+                        <div class="offer-icon">🥞☕</div>
+                        <h3>Pankek + İçecek Menüsü</h3>
+                        <p>Herhangi bir pankek + içecek</p>
+                        <div class="offer-price">
+                            <span class="old-price">78 ₺</span>
+                            <span class="new-price">65 ₺</span>
+                        </div>
+                    </div>
+
+                    <div class="offer-card animate-on-scroll">
+                        <div class="offer-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Aile Paketi</h3>
+                        <p>4 pankek + 4 içecek</p>
+                        <div class="offer-price">
+                            <span class="old-price">280 ₺</span>
+                            <span class="new-price">220 ₺</span>
+                        </div>
+                    </div>
+
+                    <div class="offer-card animate-on-scroll">
+                        <div class="offer-icon">🎂</div>
+                        <h3>Doğum Günü Özel</h3>
+                        <p>6 kişilik özel pankek + mumlar</p>
+                        <div class="offer-price">
+                            <span class="old-price">350 ₺</span>
+                            <span class="new-price">299 ₺</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">Minipan</span>
+                        <span class="logo-emoji">🥞</span>
+                    </div>
+                    <p class="footer-description">Türkiye'nin en lezzetli pankeklerini keşfedin. Her ısırıkta mutluluk tadın.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">📘</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="Twitter">🐦</a>
+                        <a href="#" class="social-link" title="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hızlı Linkler</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html#about">Hakkımızda</a></li>
+                        <li><a href="menu.html">Menü</a></li>
+                        <li><a href="index.html#gallery">Galeri</a></li>
+                        <li><a href="index.html#branches">Şubelerimiz</a></li>
+                        <li><a href="index.html#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Franchise</h4>
+                    <p class="franchise-info">Minipan ailesine katılmak için bizimle iletişime geçin.</p>
+                    <div class="franchise-contact">
+                        <p><strong>Franchise Hattı:</strong><br>0850 840 1756</p>
+                        <p><strong>E-posta:</strong><br>franchise@minipan.com</p>
+                    </div>
+                    <a href="index.html#contact" class="franchise-btn">Bilgi Al</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Minipan. Tüm hakları saklıdır.</p>
+                    <div class="footer-legal">
+                        <a href="kvkk.html" class="legal-link">KVKK Aydınlatma Metni</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="legal-link">Gizlilik Politikası</a>
+                        <span class="separator">|</span>
+                        <a href="#" class="legal-link">Kullanım Koşulları</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
