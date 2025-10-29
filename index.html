@@ -2,359 +2,354 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Minipan - Premium pankek deneyimi. Taze malzemeler ve özel tariflerle hazırlanan lezzetli pankekler.">
-    <meta name="keywords" content="pankek, minipan, tatlı, kahvaltı, Bolu, lezzetli">
-    <meta name="author" content="Minipan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyaz Ajans - Yaratıcı Dijital Çözümler</title>
+    <meta name="description" content="Beyaz Ajans olarak marka kimliği, web tasarım ve dijital pazarlama alanında profesyonel hizmetler sunuyoruz.">
     
-    <!-- Mobile optimizations -->
-    <meta name="theme-color" content="#ff6b9d">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Minipan">
-    
-    <!-- Preload critical resources -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
-    <title>Minipan - Premium Pankek Deneyimi</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Açılış Animasyonu -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <h1 class="loading-text">Minipan</h1>
-            <div class="loading-subtitle">Premium Pankek Deneyimi</div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Minipan</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="#about" class="nav-link">Hakkımızda</a></li>
-                <li><a href="#menu" class="nav-link">Menü</a></li>
-                <li><a href="#gallery" class="nav-link">Galeri</a></li>
-                <li><a href="#branches" class="nav-link">Şubelerimiz</a></li>
-                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            <div class="nav-logo">
+                <a href="#home">
+                    <h2>Beyaz<span>Ajans</span></h2>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Hizmetler</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portföy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">İletişim</a>
+                </li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <!-- Ana Sayfa -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title animate-on-scroll">Minipan</h1>
-            <p class="hero-subtitle animate-on-scroll">Her ısırıkta mutluluk tadın</p>
-            <p class="hero-description animate-on-scroll">Taze malzemeler, özel tarifler ve sevgiyle hazırlanan pankeklerimiz ile benzersiz bir lezzet deneyimi yaşayın.</p>
-            <a href="menu.html" class="cta-button animate-on-scroll">Menüyü Keşfet</a>
-        </div>
-        <div class="hero-image animate-on-scroll">
-            <div class="pankek-icon">🥞</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-subtitle">Yaratıcı</span>
+                        <span class="hero-main">Dijital Çözümler</span>
+                        <span class="hero-tagline">Markanızı Öne Çıkarıyoruz</span>
+                    </h1>
+                    <p class="hero-description">
+                        Modern tasarım anlayışıyla birleştirdiğimiz yaratıcı stratejilerle, 
+                        markanızın dijital dünyada güçlü bir kimlik oluşturmasına yardımcı oluyoruz.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">Projelerimizi İncele</a>
+                        <a href="#contact" class="btn btn-outline">İletişime Geç</a>
+                    </div>
+                </div> <br><br><br><br>
+                <div class="hero-visual">
+                    <div class="hero-shape"></div>
+                    <div class="hero-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Hakkımızda -->
-    <section id="about" class="about">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Hikayemiz</h2>
-                <p>Lezzet tutkusu ile başlayan yolculuğumuz</p>
-            </div>
             <div class="about-content">
-                <div class="about-text animate-on-scroll">
-                    <h3>Kalite ve Lezzet Arayışımız</h3>
-                    <p>2020 yılında kurulan Minipan, pankek severlerin buluşma noktası olma vizyonu ile yola çıktı. Geleneksel tariflerle modern dokunuşları birleştirerek, her yaştan misafirimize unutulmaz lezzetler sunuyoruz.</p>
-                    <p>Organik malzemeler, taze meyveler ve özel soslarımızla hazırlanan pankeklerimiz, sadece bir atıştırmalık değil, aynı zamanda bir mutluluk deneyimi.</p>
-                    <div class="features">
-                        <div class="feature">
-                            <span class="feature-icon">🌱</span>
-                            <span>Organik Malzemeler</span>
+                <div class="about-text">
+                    <span class="section-tag">Hakkımızda</span>
+                    <h2 class="section-title">Yaratıcılığın Gücüyle Markanızı Dönüştürüyoruz</h2>
+                    <p class="section-description">
+                        2015'ten bu yana, sayısız marka ile çalışarak onların hikayelerini 
+                        dijital dünyada anlamlı deneyimlere dönüştürüyoruz. Tasarım, teknoloji 
+                        ve stratejinin mükemmel birleşimini sunuyoruz.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="150">0</span>
+                            <span class="stat-label">Tamamlanan Proje</span>
                         </div>
-                        <div class="feature">
-                            <span class="feature-icon">👨‍🍳</span>
-                            <span>Usta Eller</span>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="98">0</span>
+                            <span class="stat-label">Müşteri Memnuniyeti</span>
                         </div>
-                        <div class="feature">
-                            <span class="feature-icon">❤️</span>
-                            <span>Sevgiyle Hazırlanmış</span>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="8">0</span>
+                            <span class="stat-label">Yıl Deneyim</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-image animate-on-scroll">
-                    <div class="image-placeholder">
-                        <span>🏪</span>
-                        <p>Sıcak Atmosferimiz</p>
+                <div class="about-visual">
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-users"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menü -->
-    <section id="menu" class="menu">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Lezzetli Menümüz</h2>
-                <p>Her damak tadına uygun özel tariflerimiz</p>
+            <div class="section-header">
+                <span class="section-tag">Hizmetlerimiz</span>
+                <h2 class="section-title">Kapsamlı Dijital Çözümler</h2>
+                <p class="section-description">
+                    Markanızın ihtiyaçlarına özel, entegre hizmetler sunuyoruz
+                </p>
             </div>
-            <div class="menu-grid">
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🍓</div>
-                    <h3>Çilekli Krema</h3>
-                    <p>Taze çilekler ve ev yapımı krema ile</p>
-                    <span class="price">25₺</span>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="service-title">Marka Kimliği</h3>
+                    <p class="service-description">
+                        Logo tasarımından kurumsal kimlik rehberine kadar, 
+                        markanızın görsel dilini oluşturuyoruz.
+                    </p>
+                    <div class="service-features">
+                        <span>Logo Tasarım</span>
+                        <span>Kurumsal Kimlik</span>
+                        <span>Marka Rehberi</span>
+                    </div>
                 </div>
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🍫</div>
-                    <h3>Çikolata Şöleni</h3>
-                    <p>Belçika çikolatası ve fındık parçacıkları</p>
-                    <span class="price">30₺</span>
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Tasarım & Geliştirme</h3>
+                    <p class="service-description">
+                        Modern, responsive ve kullanıcı dostu web siteleri 
+                        ile dijital varlığınızı güçlendiriyoruz.
+                    </p>
+                    <div class="service-features">
+                        <span>Responsive Tasarım</span>
+                        <span>E-ticaret</span>
+                        <span>CMS Çözümleri</span>
+                    </div>
                 </div>
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🍌</div>
-                    <h3>Muzlu Karamel</h3>
-                    <p>Karamelize muz ve ev yapımı karamel sos</p>
-                    <span class="price">28₺</span>
-                </div>
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🥜</div>
-                    <h3>Fıstıklı Bal</h3>
-                    <p>Antep fıstığı ve doğal çiçek balı</p>
-                    <span class="price">32₺</span>
-                </div>
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🍊</div>
-                    <h3>Portakallı Tarçın</h3>
-                    <p>Taze portakal suyu ve Ceylon tarçını</p>
-                    <span class="price">26₺</span>
-                </div>
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-icon">🍒</div>
-                    <h3>Vişneli Krema</h3>
-                    <p>Ekşi vişne ve mascarpone krema</p>
-                    <span class="price">29₺</span>
-                </div>
-            </div>
-            <div class="menu-cta animate-on-scroll">
-                <a href="menu.html" class="menu-full-btn">Tüm Menüyü Gör</a>
-                <p>Daha fazla lezzet seçeneği için detaylı menümüzü inceleyin</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeri -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Lezzet Galerimiz</h2>
-                <p>Görsel şölen sunan pankeklerimiz</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🥞</div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🍓</div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🍫</div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🍌</div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🥜</div>
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <div class="gallery-placeholder">🍊</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Dijital Pazarlama</h3>
+                    <p class="service-description">
+                        SEO, sosyal medya ve reklam kampanyaları ile 
+                        hedef kitlenize ulaşmanızı sağlıyoruz.
+                    </p>
+                    <div class="service-features">
+                        <span>SEO Optimizasyon</span>
+                        <span>Sosyal Medya</span>
+                        <span>Google Ads</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Şubelerimiz -->
-    <section id="branches" class="branches">
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Şubelerimiz</h2>
-                <p>Size en yakın Minipan şubemizi keşfedin</p>
+            <div class="section-header">
+                <span class="section-tag">Portföyümüz</span>
+                <h2 class="section-title">Başarı Hikayelerimiz</h2>
+                <p class="section-description">
+                    Müşterilerimizle birlikte yarattığımız başarılı projelere göz atın
+                </p>
             </div>
-            <div class="branches-grid">
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">📍</div>
-                    <h3>Edirne - 1. Murat Mah.</h3>
-                    <p>Maliyeciler Sitesi, Zübeyde Hanım Cd. 4.Sok</p>
-                    <div class="branch-status open">Açık</div>
-                    <a href="https://www.google.com/maps/dir//1.+Murat,+Maliyeciler+Sitesi,+Z%C3%BCbeyde+Han%C4%B1m+Cd.+4.Sok,+22100+Edirne+Merkez%2FEdirne/@41.6653392,26.4985204,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14b32f7c8b2b4fb9:0xbdf6507457aa6e66!2m2!1d26.5809212!2d41.6653686?hl=tr&entry=ttu&g_ep=EgoyMDI1MDEwMi4wIKXMDSoASAFQAw%3D%3D" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll coming-soon">
-                    <div class="branch-icon">🏗️</div>
-                    <h3>Edirne - Atatürk Mah.</h3>
-                    <p>Şubemiz hazırlanıyor</p>
-                    <div class="branch-status coming">Çok Yakında</div>
-                    <button class="branch-button disabled" disabled>Çok Yakında</button>
-                </div>
-                
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">📍</div>
-                    <h3>Kırlareli - Lüleburgaz</h3>
-                    <p>Merkez konumda hizmetinizdeyiz</p>
-                    <div class="branch-status open">Açık</div>
-                    <a href="https://www.google.com/maps/dir/40.7374164,31.5854415/minipan+l%C3%BCleburgaz/@41.0561274,26.8309217,7z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x14b4a35856c8a7cb:0xc30a8ac5d03ff2e!2m2!1d27.3550426!2d41.3877495?entry=ttu&g_ep=EgoyMDI1MDEwMi4wIKXMDSoASAFQAw%3D%3D" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">📍</div>
-                    <h3>Tekirdağ - Değirmenaltı</h3>
-                    <p>Şehir merkezinde konumlanmış şubemiz</p>
-                    <div class="branch-status open">Açık</div>
-                    <a href="https://www.google.com/maps/search/minipan+tekirda%C4%9F" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">📍</div>
-                    <h3>Bolu - Tabaklar Mah.</h3>
-                    <p>Tabaklar, Börekciler Sk. No: 20B D:19, 14100 Bolu Merkez/Bolu</p>
-                    <div class="branch-status open">Açık</div>
-                    <a href="https://www.google.com/maps/search/Tabaklar,+B%C3%B6rekciler+Sk.+No:+20B+D:19,+14100+Bolu+Merkez%2FBolu" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">📍</div>
-                    <h3>Çankırı</h3>
-                    <p>Çankırı merkez lokasyonda</p>
-                    <div class="branch-status open">Açık</div>
-                    <a href="https://www.google.com/maps/search/minipan+%C3%A7ank%C4%B1r%C4%B1" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll active">
-                    <div class="branch-icon">⚡</div>
-                    <h3>Minipan Express - Çorlu</h3>
-                    <p>Reşadiye, Yunus Emre Cd. Ar. No:4B</p>
-                    <div class="branch-status express">Express</div>
-                    <a href="https://www.google.com/maps/dir//Re%C5%9Fadiye,+Yunus+Emre+Cd.+Ar.+No:4B,+59850+%C3%87orlu%2FTekirda%C4%9F/@41.1551712,27.7175457,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14b4e727799a561b:0x34240b9836cea6d8!2m2!1d27.7999465!2d41.1552006" 
-                       class="branch-button" target="_blank">Şubeye Git</a>
-                </div>
-                
-                <div class="branch-item animate-on-scroll coming-soon">
-                    <div class="branch-icon">🏗️</div>
-                    <h3>Çanakkale</h3>
-                    <p>Çanakkale şubemiz hazırlanıyor</p>
-                    <div class="branch-status coming">Çok Yakında</div>
-                    <button class="branch-button disabled" disabled>Çok Yakında</button>
-                </div>
-                
-                <div class="branch-item animate-on-scroll coming-soon">
-                    <div class="branch-icon">🏗️</div>
-                    <h3>Kırklareli</h3>
-                    <p>Kırklareli şubemiz hazırlanıyor</p>
-                    <div class="branch-status coming">Çok Yakında</div>
-                    <button class="branch-button disabled" disabled>Çok Yakında</button>
-                </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="branding">Marka</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="marketing">Pazarlama</button>
             </div>
-            
-            <div class="branch-info animate-on-scroll">
-                <div class="info-card">
-                    <div class="info-icon">🏪</div>
-                    <h4>Şube Sayımız</h4>
-                    <p class="info-number">6+</p>
-                    <span>Aktif Şube</span>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Lüks Otel Markası</h3>
+                            <p class="portfolio-category">Marka Kimliği</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🚀</div>
-                    <h4>Genişliyoruz</h4>
-                    <p class="info-number">3</p>
-                    <span>Yeni Şube Açılıyor</span>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">E-ticaret Platformu</h3>
+                            <p class="portfolio-category">Web Tasarım</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">📞</div>
-                    <h4>Bayilik</h4>
-                    <p class="info-number">0850</p>
-                    <span>840 1756</span>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Dijital Kampanya</h3>
+                            <p class="portfolio-category">Pazarlama</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Teknoloji Startup</h3>
+                            <p class="portfolio-category">Marka Kimliği</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Kurumsal Web Sitesi</h3>
+                            <p class="portfolio-category">Web Tasarım</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Sosyal Medya Stratejisi</h3>
+                            <p class="portfolio-category">Pazarlama</p>
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- İletişim -->
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Bize Ulaşın</h2>
-                <p>Sorularınız ve önerileriniz için</p>
-            </div>
             <div class="contact-content">
-                <div class="contact-info animate-on-scroll">
-                    <h3>İletişim Bilgileri</h3>
-                    <div class="contact-items-grid">
+                <div class="contact-info">
+                    <span class="section-tag">İletişim</span>
+                    <h2 class="section-title">Projenizi Konuşalım</h2>
+                    <p class="section-description">
+                        Markanızı dijital dünyada öne çıkaracak projeniz için 
+                        bizimle iletişime geçin. Size özel çözümler üretelim.
+                    </p>
+                    <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong>Adres</strong>
-                                <p>Tabaklar, Börekciler Sk. No: 20B D:19<br>14100 Bolu Merkez/Bolu</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Adres</h4>
+                                <p>Beyoğlu, İstanbul<br>Türkiye</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <strong>Telefon</strong>
-                                <p>0850 840 1756</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telefon</h4>
+                                <p>+90 (212) 123 45 67</p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <strong>E-posta</strong>
-                                <p>info@minipan.com</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">🕒</span>
-                            <div>
-                                <strong>Çalışma Saatleri</strong>
-                                <p>Pazartesi - Pazar: 08:00 - 22:00</p>
+                            <div class="contact-text">
+                                <h4>E-posta</h4>
+                                <p>info@beyazajans.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form animate-on-scroll">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Adınız" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="E-posta" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Mesajınız" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group kvkk-consent">
-                        <label class="checkbox-container">
-                            <input type="checkbox" id="kvkk-consent" required>
-                            <span class="checkmark"></span>
-                            <span class="consent-text">
-                                <a href="kvkk.html" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum, anladım ve kişisel verilerimin işlenmesine rıza gösteriyorum.
-                            </span>
-                        </label>
-                    </div>
-                    <button type="submit" class="submit-btn">Gönder</button>
-                </form>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Telefon Numaranız">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Hizmet Seçiniz</option>
+                                <option value="branding">Marka Kimliği</option>
+                                <option value="web">Web Tasarım</option>
+                                <option value="marketing">Dijital Pazarlama</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Projeniz hakkında bize bilgi verin..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Mesaj Gönder</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -363,59 +358,32 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-text">Minipan</span>
-                        <span class="logo-emoji">🥞</span>
-                    </div>
-                    <p class="footer-description">Türkiye'nin en lezzetli pankeklerini keşfedin. Her ısırıkta mutluluk tadın.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="Facebook">📘</a>
-                        <a href="#" class="social-link" title="Instagram">📷</a>
-                        <a href="#" class="social-link" title="Twitter">🐦</a>
-                        <a href="#" class="social-link" title="YouTube">📺</a>
-                    </div>
+                <div class="footer-logo">
+                    <h3>Beyaz<span>Ajans</span></h3>
+                    <p>Yaratıcı dijital çözümlerle markanızı geleceğe taşıyoruz.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Hızlı Linkler</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Ana Sayfa</a></li>
-                        <li><a href="#about">Hakkımızda</a></li>
-                        <li><a href="menu.html">Menü</a></li>
-                        <li><a href="#gallery">Galeri</a></li>
-                        <li><a href="#branches">Şubelerimiz</a></li>
-                        <li><a href="#contact">İletişim</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Franchise</h4>
-                    <p class="franchise-info">Minipan ailesine katılmak için bizimle iletişime geçin.</p>
-                    <div class="franchise-contact">
-                        <p><strong>Franchise Hattı:</strong><br>0850 840 1756</p>
-                        <p><strong>E-posta:</strong><br>franchise@minipan.com</p>
-                    </div>
-                    <a href="#contact" class="franchise-btn">Bilgi Al</a>
+                <div class="footer-social">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-behance"></i>
+                    </a>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Minipan. Tüm hakları saklıdır.</p>
-                    <div class="footer-legal">
-                        <a href="kvkk.html" class="legal-link">KVKK Aydınlatma Metni</a>
-                        <span class="separator">|</span>
-                        <a href="#" class="legal-link">Gizlilik Politikası</a>
-                        <span class="separator">|</span>
-                        <a href="#" class="legal-link">Kullanım Koşulları</a>
-                    </div>
-                </div>
+                <p>&copy; 2024 Beyaz Ajans. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="contact-form.js"></script>
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
