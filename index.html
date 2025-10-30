@@ -1,389 +1,380 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyaz Ajans - Yaratıcı Dijital Çözümler</title>
-    <meta name="description" content="Beyaz Ajans olarak marka kimliği, web tasarım ve dijital pazarlama alanında profesyonel hizmetler sunuyoruz.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEYAZ AJANS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Responsive site genel ayarları */
+    @media (max-width: 900px) {
+      section, header {
+        padding: 30px 0;
+      }
+      h1, h2 {
+        font-size: 2rem !important;
+      }
+    }
+    @media (max-width: 600px) {
+      section, header {
+        padding: 18px 0;
+      }
+      h1, h2 {
+        font-size: 1.3rem !important;
+      }
+      .navbar-brand img {
+        height: 36px;
+      }
+    }
+    /* Galeri slider responsive ayarı */
+    @media (max-width: 900px) {
+      #galleryCarousel .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: none;
+      }
+      #galleryCarousel .col-md-4:first-child {
+        display: block;
+      }
+      #galleryCarousel .row.justify-content-center {
+        justify-content: center !important;
+      }
+    }
+    /* Carousel arrow custom styles */
+    #galleryCarousel .carousel-control-prev,
+    #galleryCarousel .carousel-control-next {
+      width: 5rem;
+      height: 5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      opacity: 1;
+      z-index: 2;
+    }
+    #galleryCarousel .carousel-control-prev {
+      left: -3.5rem;
+    }
+    #galleryCarousel .carousel-control-next {
+      right: -3.5rem;
+    }
+    #galleryCarousel .carousel-control-prev-icon,
+    #galleryCarousel .carousel-control-next-icon {
+      background-image: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 2rem;
+    }
+    #galleryCarousel .carousel-control-prev-icon:after {
+      content: '\2039'; /* Unicode left arrow */
+      color: #111;
+      font-size: 2.2rem;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+    }
+    #galleryCarousel .carousel-control-next-icon:after {
+      content: '\203A'; /* Unicode right arrow */
+      color: #111;
+      font-size: 2.2rem;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      #galleryCarousel .carousel-control-prev {
+        left: -1.5rem;
+      }
+      #galleryCarousel .carousel-control-next {
+        right: -1.5rem;
+      }
+      #galleryCarousel .carousel-control-prev,
+      #galleryCarousel .carousel-control-next {
+        width: 3rem;
+        height: 3rem;
+      }
+      #galleryCarousel .carousel-control-prev-icon,
+      #galleryCarousel .carousel-control-next-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      transition: box-shadow 0.3s, background 0.3s;
+    }
+    .navbar.scrolled {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+      background: rgba(255,255,255,0.98);
+    }
+    @media (max-width: 900px) {
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+      }
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+    section, header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 0;
+    }
+    header.hero-section {
+      position: relative;
+      color: white;
+      text-align: center;
+      background: url('https://source.unsplash.com/1600x900/?creative,design') center/cover no-repeat;
+    }
+    header.hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    header.hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    section.bg-light {
+      background-color: #f8f9fa !important;
+    }
+    footer {
+      background: #000;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <h2>Beyaz<span>Ajans</span></h2>
-                </a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Ana Sayfa</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">Hakkımızda</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Hizmetler</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#portfolio" class="nav-link">Portföy</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">İletişim</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="hero-subtitle">Yaratıcı</span>
-                        <span class="hero-main">Dijital Çözümler</span>
-                        <span class="hero-tagline">Markanızı Öne Çıkarıyoruz</span>
-                    </h1>
-                    <p class="hero-description">
-                        Modern tasarım anlayışıyla birleştirdiğimiz yaratıcı stratejilerle, 
-                        markanızın dijital dünyada güçlü bir kimlik oluşturmasına yardımcı oluyoruz.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">Projelerimizi İncele</a>
-                        <a href="#contact" class="btn btn-outline">İletişime Geç</a>
-                    </div>
-                </div> <br><br><br><br>
-                <div class="hero-visual">
-                    <div class="hero-shape"></div>
-                    <div class="hero-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand mx-auto" href="#hero">
+        <img src="assets/images/WhatsApp Image 2025-10-31 at 01.19.30.jpeg" alt="BEYAZ AJANS">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-end">
+          <li class="nav-item"><a class="nav-link" href="#hero">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="#yazılar">Yazılarımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hizmetler">Hizmetler</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-tag">Hakkımızda</span>
-                    <h2 class="section-title">Yaratıcılığın Gücüyle Markanızı Dönüştürüyoruz</h2>
-                    <p class="section-description">
-                        2015'ten bu yana, sayısız marka ile çalışarak onların hikayelerini 
-                        dijital dünyada anlamlı deneyimlere dönüştürüyoruz. Tasarım, teknoloji 
-                        ve stratejinin mükemmel birleşimini sunuyoruz.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="150">0</span>
-                            <span class="stat-label">Tamamlanan Proje</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="98">0</span>
-                            <span class="stat-label">Müşteri Memnuniyeti</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="8">0</span>
-                            <span class="stat-label">Yıl Deneyim</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="about-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- HERO -->
+  <header id="hero" class="hero-section">
+    <img src="assets/images/WhatsApp Image 2025-10-31 at 01.19.30.jpeg" alt="BEYAZ AJANS">
+  </header>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Hizmetlerimiz</span>
-                <h2 class="section-title">Kapsamlı Dijital Çözümler</h2>
-                <p class="section-description">
-                    Markanızın ihtiyaçlarına özel, entegre hizmetler sunuyoruz
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="service-title">Marka Kimliği</h3>
-                    <p class="service-description">
-                        Logo tasarımından kurumsal kimlik rehberine kadar, 
-                        markanızın görsel dilini oluşturuyoruz.
-                    </p>
-                    <div class="service-features">
-                        <span>Logo Tasarım</span>
-                        <span>Kurumsal Kimlik</span>
-                        <span>Marka Rehberi</span>
-                    </div>
-                </div>
-                <div class="service-card featured">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Web Tasarım & Geliştirme</h3>
-                    <p class="service-description">
-                        Modern, responsive ve kullanıcı dostu web siteleri 
-                        ile dijital varlığınızı güçlendiriyoruz.
-                    </p>
-                    <div class="service-features">
-                        <span>Responsive Tasarım</span>
-                        <span>E-ticaret</span>
-                        <span>CMS Çözümleri</span>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Dijital Pazarlama</h3>
-                    <p class="service-description">
-                        SEO, sosyal medya ve reklam kampanyaları ile 
-                        hedef kitlenize ulaşmanızı sağlıyoruz.
-                    </p>
-                    <div class="service-features">
-                        <span>SEO Optimizasyon</span>
-                        <span>Sosyal Medya</span>
-                        <span>Google Ads</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- YAZI -->
+  <section id="yazılar">
+    <div class="text-center">
+      <h2 class="fw-bold fs-1">YAZI</h2>
+      <p class="mt-3 text-muted container">
+        Yaratıcı fikirlerle markanıza değer katıyoruz. Her projede estetik, strateji ve özgünlüğü bir araya getiriyoruz.
+      </p>
+    </div>
+  </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portföyümüz</span>
-                <h2 class="section-title">Başarı Hikayelerimiz</h2>
-                <p class="section-description">
-                    Müşterilerimizle birlikte yarattığımız başarılı projelere göz atın
-                </p>
-            </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Tümü</button>
-                <button class="filter-btn" data-filter="branding">Marka</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="marketing">Pazarlama</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Lüks Otel Markası</h3>
-                            <p class="portfolio-category">Marka Kimliği</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">E-ticaret Platformu</h3>
-                            <p class="portfolio-category">Web Tasarım</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="marketing">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Dijital Kampanya</h3>
-                            <p class="portfolio-category">Pazarlama</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Teknoloji Startup</h3>
-                            <p class="portfolio-category">Marka Kimliği</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Kurumsal Web Sitesi</h3>
-                            <p class="portfolio-category">Web Tasarım</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="marketing">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Sosyal Medya Stratejisi</h3>
-                            <p class="portfolio-category">Pazarlama</p>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- HİZMETLER -->
+  <section class="bg-light text-center" id="hizmetler">
+    <h2 class="fw-bold mb-5">HİZMETLERİMİZ</h2>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm p-4 h-100">
+            <h5 class="fw-bold mb-3">Marka Tasarımı</h5>
+            <p>Logo, kurumsal kimlik ve marka dili ile sizi farklılaştırıyoruz.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <span class="section-tag">İletişim</span>
-                    <h2 class="section-title">Projenizi Konuşalım</h2>
-                    <p class="section-description">
-                        Markanızı dijital dünyada öne çıkaracak projeniz için 
-                        bizimle iletişime geçin. Size özel çözümler üretelim.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Adres</h4>
-                                <p>Beyoğlu, İstanbul<br>Türkiye</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefon</h4>
-                                <p>+90 (212) 123 45 67</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>E-posta</h4>
-                                <p>info@beyazajans.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Telefon Numaranız">
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Hizmet Seçiniz</option>
-                                <option value="branding">Marka Kimliği</option>
-                                <option value="web">Web Tasarım</option>
-                                <option value="marketing">Dijital Pazarlama</option>
-                                <option value="other">Diğer</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Projeniz hakkında bize bilgi verin..." rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Mesaj Gönder</button>
-                    </form>
-                </div>
-            </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-4 h-100">
+            <h5 class="fw-bold mb-3">Web Tasarımı</h5>
+            <p>Modern, responsive ve kullanıcı dostu web siteleri tasarlıyoruz.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Beyaz<span>Ajans</span></h3>
-                    <p>Yaratıcı dijital çözümlerle markanızı geleceğe taşıyoruz.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-behance"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Beyaz Ajans. Tüm hakları saklıdır.</p>
-            </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm p-4 h-100">
+            <h5 class="fw-bold mb-3">Sosyal Medya Yönetimi</h5>
+            <p>Hedef kitlenizle doğru zamanda, doğru yerde buluşmanızı sağlıyoruz.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
+  <!-- GALERİ -->
+  <section class="text-center" id="galeri">
+    <h2 class="fw-bold mb-5">GÖRSEL GALERİ</h2>
+    <div class="container">
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2619.png" class="card-img-top" alt="Görsel 1">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2634.png" class="card-img-top" alt="Görsel 2">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2649.png" class="card-img-top" alt="Görsel 3">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2650.png" class="card-img-top" alt="Görsel 4">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2651.png" class="card-img-top" alt="Görsel 5">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2658.png" class="card-img-top" alt="Görsel 6">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2660.png" class="card-img-top" alt="Görsel 7">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2662.png" class="card-img-top" alt="Görsel 8">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2665.png" class="card-img-top" alt="Görsel 9">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2669.png" class="card-img-top" alt="Görsel 10">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2672.png" class="card-img-top" alt="Görsel 11">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2675.png" class="card-img-top" alt="Görsel 12">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2677.png" class="card-img-top" alt="Görsel 13">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2682.png" class="card-img-top" alt="Görsel 14">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <img src="assets/images/IMG_2687.png" class="card-img-top" alt="Görsel 15">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Önceki</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Sonraki</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="text-center" id="iletisim">
+    <h2 class="fw-bold mb-4">BİZE ULAŞIN</h2>
+    <div class="container">
+      <form class="mx-auto" style="max-width: 600px;">
+        <input type="text" class="form-control mb-3" placeholder="Adınız Soyadınız" required>
+        <input type="email" class="form-control mb-3" placeholder="E-posta" required>
+        <textarea class="form-control mb-3" rows="4" placeholder="Mesajınız..." required></textarea>
+        <button type="submit" class="btn btn-dark px-5">Gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-white py-4">
+    <p class="mb-0">© 2025 Beyaz Ajans | Tüm Hakları Saklıdır & Designed By <a href="https://www.linkedin.com/in/ibrhm04/" target="_blank" class="text-white">Halil İbrahim Ağdaş</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll smooth effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
